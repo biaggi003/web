@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FORM DENGAN JQUERY</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="/tugas/css/style2.css">
+</head>
+<body>
+	<div class="kotak">
+		<h1>FORM</h1>
+		<form method="post" class="form">
+			<input type="text" id="npm" name="npm" placeholder="Masukkan NPM anda..">
+ 	 	 	<span class="pesan pesan-npm">*NPM tidak boleh kosong!</span><br/>
+ 	 	 	<input type="text" id="nama" name="nama" placeholder="Masukkan Nama anda.."/>
+ 	 	 	<span class="pesan pesan-nama">*Nama tidak boleh kosong!</span><br/>
+ 	 	 	<input type="text" id="kelas" name="kelas" placeholder="Masukkan Kelas anda.."/>
+ 	 	 	<span class="pesan pesan-kelas">*Kelas tidak boleh kosong!</span><br/><br/>
+	 	 	<input type="submit" value="Submit"/>
+		</form>
+	</div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.form').submit(function() {
+			var npm = $('#npm').val().length;			
+ 			if (npm == 0) {				
+				$(".pesan-npm").css('display','block');
+				return false;
+			}
+
+			var nama = $('#nama').val().length;			
+ 			if (nama == 0) {				
+				$(".pesan-nama").css('display','block');
+				return false;
+			}
+
+			var kelas = $('#kelas').val().length;			
+ 			if (kelas == 0) {				
+				$(".pesan-kelas").css('display','block');
+				return false;
+			}
+			return true;			
+		});
+	});
+</script>
+</html>
